@@ -1131,7 +1131,10 @@ p.CTA-detail {
 .QR {
   width: 200px;
   height: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain; /* prevents stretching/squeezing */
   justify-self: center;
+  max-width: 100%;
 }
 
 #lineoa {
@@ -1148,16 +1151,26 @@ p.CTA-detail {
 
 .tel-email {
   display: flex;
+  flex-direction: column; /* stack tel and email vertically */
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  justify-content: center;
+  /* display: flex;
   flex-wrap: wrap;
   gap: 0.1rem;
   align-items: center;
   font-weight: 600;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .tel {
-  padding: 20px;
+  padding: 0 10px;
   transition: 0.1s ease;
+  text-align: center;
+  /* padding: 20px;
+  transition: 0.1s ease; */
 }
 
 .tel:hover {
@@ -1166,8 +1179,11 @@ p.CTA-detail {
 }
 
 .email {
-  padding: 10px;
+  padding: 0 10px;
   transition: 0.1s ease;
+  text-align: center;
+  /* padding: 10px;
+  transition: 0.1s ease; */
 }
 
 .email:hover {
