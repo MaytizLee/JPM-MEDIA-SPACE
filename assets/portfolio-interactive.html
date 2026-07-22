@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Immersive interactive program services for events and permanent spaces. Touch screens, projection mapping, LED walls, and intelligent sensors customized for your audience.">
+  <title>JPM MEDIA SPACE | IMMERSIVE WORKS</title>
+  <link rel="icon" href="assets/site icon.png" sizes="32x32">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styleimmersive.css">
+</head>
+
+<body>
+      <!-- ==========================================
+       NAV BAR
+       ========================================== -->
+     <nav class="navbar" id="navbar">
+    <div class="container">
+    <a href="index.html" class="logo">
+      <img src="assets/JPM NEW LOGO.png" alt="">
+    </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html #about" class="nav-link">About</a></li>
+        <li><a href="index.html #services-overview" class="nav-link">Services</a></li>
+        <li><a href="index.html #packages" class="nav-link">Packages</a></li>
+        <li><a href="index.html #sensors" class="nav-link">Add-on Sensors</a></li>
+        <li><a href="index.html #portfolio" class="nav-link">Portfolio</a></li>
+        <!-- <li><a href="#workflow" class="nav-link">Workflow</a></li> -->
+        <li><a href="index.html #contact" class="btn btn-secondary">Contact us</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+        ☰
+      </button>
+    </div>
+  </nav>
+
+    <!-- ==========================================
+       Portfolio
+       ========================================== -->
+
+<section class="portfolio" id="portfolio">
+  <div class="container" id="portpart">
+    <div class="section-header">
+      <h2 class="section-title" id="section-title.port">Interactive & Immersive Experiences</h2>
+    </div>
+
+ <div class="portfolio-gallery">
+
+  <!-- Portfolio 1 -->
+  <input type="checkbox" id="modal1" class="modal-toggle">
+  <label for="modal1" class="portfolio-item">
+    <img src="assets/Nicolas.png" alt="Immersive LED and Projection Mapping room reference">
+    <div class="portfolio-overlay">
+      <h3 class="portfolio-title">Shrine of Blessed Nicholas Bunkerd</h3>
+    </div>
+  </label>
+  <div class="modal-overlay modal-overlay-1">
+    <label for="modal1" class="modal-overlay-inner">
+      <video class="modal-video" controls onclick="event.stopPropagation()">
+        <source src="assets/สักการสถาน นักบุญ Nicolas 1.mp4.mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
+    </label>
+  </div>
+
+  <!-- Portfolio 2 -->
+  <input type="checkbox" id="modal2" class="modal-toggle">
+  <label for="modal2" class="portfolio-item">
+    <img src="assets/Punthai.png" alt="Immersive LED and Projection Mapping room reference">
+    <div class="portfolio-overlay">
+      <h3 class="portfolio-title">Punthai Coffee</h3>
+    </div>
+  </label>
+  <div class="modal-overlay modal-overlay-2">
+    <label for="modal2" class="modal-overlay-inner">
+      <video class="modal-video" controls onclick="event.stopPropagation()">
+        <source src="assets/Punthai 1.mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
+    </label>
+  </div>
+
+</div>
+ 
+<a href="portfolio-touch-screen.html"><button class="switch-port">Touch Screen Program</button></a>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.modal-toggle').forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      // find the modal-overlay that comes AFTER the thumbnail label
+      const overlay = checkbox.nextElementSibling.nextElementSibling;
+      const video = overlay.querySelector('.modal-video');
+
+      if (video) {
+        if (checkbox.checked) {
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  });
+</script>
+
+
+</body>
+
