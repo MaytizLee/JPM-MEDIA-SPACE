@@ -48,7 +48,7 @@
       <h2 class="section-title" id="section-title.port">Touch Screen Program</h2>
     </div>
 
- <div class="portfolio-gallery">
+<div class="portfolio-gallery">
 
   <!-- Portfolio 1 -->
   <input type="checkbox" id="modal1" class="modal-toggle">
@@ -60,7 +60,10 @@
   </label>
   <div class="modal-overlay modal-overlay-1">
     <label for="modal1" class="modal-overlay-inner">
-      <img src="assets/BCC Power.png" class="modal-img">
+      <video class="modal-video" controls onclick="event.stopPropagation()">
+        <source src="assets/BCC_Power.mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
     </label>
   </div>
 
@@ -74,7 +77,10 @@
   </label>
   <div class="modal-overlay modal-overlay-2">
     <label for="modal2" class="modal-overlay-inner">
-      <img src="assets/Dynasty preview.png" class="modal-img">
+      <video class="modal-video" controls onclick="event.stopPropagation()">
+        <source src="assets/Dynasty Preview [NetMode_ Standalone]  (64-bit_Windows)  2026-02-13 20-09-10 (1).mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
     </label>
   </div>
 
@@ -88,7 +94,10 @@
   </label>
   <div class="modal-overlay modal-overlay-3">
     <label for="modal3" class="modal-overlay-inner">
-      <img src="assets/Kepler preview.png" class="modal-img">
+      <video class="modal-video" controls onclick="event.stopPropagation()">
+        <source src="assets/Kepler Preview [NetMode_ Standalone 0]  (64-bit_PC D3D SM6) 2026-02-13 20-21-52 (1).mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
     </label>
   </div>
 
@@ -102,21 +111,41 @@
   </label>
   <div class="modal-overlay modal-overlay-4">
     <label for="modal4" class="modal-overlay-inner">
-      <img src="assets/พิพิธภัณฑ์มหาวิทยาลัยวลัยลักษณ์.png" class="modal-img">
+      <video class="modal-video" controls onclick="event.stopPropagation()">
+        <source src="assets/Research Preview [NetMode_ Standalone 0]  (64-bit_PC D3D SM6) 2025-05-21 09-54-41.mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
     </label>
   </div>
 
+</div>
+            
 
-     
-           
-
+<a href="portfolio-interactive.html"><button class="switch-port">Interactive & Immersive Experiences</button></a>
 
     </div>
   </div>
 </section>
 
 
+<script>
+  document.querySelectorAll('.modal-toggle').forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      // find the modal-overlay that comes AFTER the thumbnail label
+      const overlay = checkbox.nextElementSibling.nextElementSibling;
+      const video = overlay.querySelector('.modal-video');
 
+      if (video) {
+        if (checkbox.checked) {
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  });
+</script>
 
 </body>
 

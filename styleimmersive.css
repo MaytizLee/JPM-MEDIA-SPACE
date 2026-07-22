@@ -1653,6 +1653,36 @@ textarea.form-control {
   margin-top: 50px;
 }
 
+.switch-port {
+  float: right;
+  background-color: #6D7099;
+  color: #FFFFFF;
+  border: solid 1px #7C7EA0;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 30px;
+  font-size: 14px;
+  margin-right: 15px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.switch-port:hover {
+  background-color: #F2F2FA;
+  color: #6D7099;
+  border: solid 1px #6D7099;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 30px;
+  font-size: 14px;
+  margin-right: 15px;
+  
+}
+
+#portfolio {
+  margin-bottom: 40px;
+}
+
 
 .modal-toggle {
   display: none;
@@ -1672,7 +1702,7 @@ textarea.form-control {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.25s ease;
-  pointer-events: none; /* prevent invisible overlays from blocking clicks */
+  pointer-events: none;
 }
 
 .modal-overlay-inner {
@@ -1684,7 +1714,7 @@ textarea.form-control {
   cursor: pointer;
 }
 
-.modal-img {
+.modal-video {
   max-width: 90%;
   max-height: 90%;
   border-radius: 8px;
@@ -1693,7 +1723,9 @@ textarea.form-control {
 
 /* Match each checkbox to its own overlay only */
 #modal1:checked ~ .modal-overlay-1,
-#modal2:checked ~ .modal-overlay-2 {
+#modal2:checked ~ .modal-overlay-2,
+#modal3:checked ~ .modal-overlay-3,
+#modal4:checked ~ .modal-overlay-4 {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;

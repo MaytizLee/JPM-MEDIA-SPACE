@@ -60,34 +60,56 @@
   </label>
   <div class="modal-overlay modal-overlay-1">
     <label for="modal1" class="modal-overlay-inner">
-      <img src="assets/Nicolas.png" class="modal-img">
+      <video class="modal-video" controls onclick="event.stopPropagation()">
+        <source src="assets/สักการสถาน นักบุญ Nicolas.mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
     </label>
   </div>
 
   <!-- Portfolio 2 -->
   <input type="checkbox" id="modal2" class="modal-toggle">
   <label for="modal2" class="portfolio-item">
-    <img src="assets/Punthai.png" alt="Second project reference">
+    <img src="assets/Punthai.png" alt="Immersive LED and Projection Mapping room reference">
     <div class="portfolio-overlay">
       <h3 class="portfolio-title">Punthai Coffee</h3>
     </div>
   </label>
   <div class="modal-overlay modal-overlay-2">
     <label for="modal2" class="modal-overlay-inner">
-      <img src="assets/Punthai.png" class="modal-img">
+      <video class="modal-video" controls onclick="event.stopPropagation()">
+        <source src="assets/Punthai.mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
     </label>
   </div>
 
-
-     
-           
-
+</div>
+ 
+<a href="portfolio-touch-screen.html"><button class="switch-port">Touch Screen Program</button></a>
 
     </div>
   </div>
 </section>
 
+<script>
+  document.querySelectorAll('.modal-toggle').forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      // find the modal-overlay that comes AFTER the thumbnail label
+      const overlay = checkbox.nextElementSibling.nextElementSibling;
+      const video = overlay.querySelector('.modal-video');
 
+      if (video) {
+        if (checkbox.checked) {
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  });
+</script>
 
 
 </body>
